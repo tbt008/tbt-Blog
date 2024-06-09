@@ -15,8 +15,10 @@
 
 
 前端就是那个vue3-blog文件，用vscode单独打开，执行
-npm install
-npm run dev
+npm install  安装所有包
+
+
+npm run dev  运行
 
 后端数据库修改：
 ![image](https://github.com/tbt008/tbt-Blog/assets/136364030/20a4d6fe-7982-41dd-bd08-4bf6309c85c3)
