@@ -156,7 +156,7 @@ export default {
       this.isSelect = -1
       this.isBottom = false
       axios
-        .get('http://ip(localhost):端口/user/article/page?pageNo=1&pageSize=5&isAsc=false')
+        .get('http://localhost:9090/user/article/page?pageNo=1&pageSize=5&isAsc=false')
         .then((res) => {
           if (res.data.data.length == 0) {
             this.isBottom = true
@@ -169,7 +169,7 @@ export default {
       this.isSelect = id
       axios
         .get(
-          `http://ip(localhost):端口/user/article/page?typeId=${this.isSelect}&pageNo=1&pageSize=5&isAsc=false`
+          `http://localhost:9090/user/article/page?typeId=${this.isSelect}&pageNo=1&pageSize=5&isAsc=false`
         )
         .then((res) => {
           if (res.data.data.length == 0) {
@@ -190,7 +190,7 @@ export default {
         axios
 
           .get(
-            `http://ip(localhost):端口/user/article/page?pageNo=${pageNo}&pageSize=5&isAsc=false`
+            `http://localhost:9090/user/article/page?pageNo=${pageNo}&pageSize=5&isAsc=false`
           )
           .then((res) => {
             // console.log(res.data.data)
@@ -204,7 +204,7 @@ export default {
         axios
           // 60.205.254.145
           .get(
-            `http://ip(localhost):端口/user/article/page?typeId=${isSelect}&pageNo=${pageNo}&pageSize=5&isAsc=false`
+            `http://localhost:9090/user/article/page?typeId=${isSelect}&pageNo=${pageNo}&pageSize=5&isAsc=false`
           )
           .then((res) => {
             if (res.data.data.length == 0) {
@@ -224,26 +224,26 @@ export default {
   },
   async created() {
     const res = await axios.get(
-      'http://ip(localhost):端口/user/article/page?pageNo=1&pageSize=5&isAsc=false'
+      'http://localhost:9090/user/article/page?pageNo=1&pageSize=5&isAsc=false'
     )
 
     this.articles = res.data.data
     this.newArticle = res.data.data.slice(0, 3)
     this.isloading = false
     // 标签
-    const res1 = await axios.get('http://ip(localhost):端口/label/getAll')
+    const res1 = await axios.get('http://localhost:9090/label/getAll')
     var type = ['primary', 'success', 'info', 'warning', 'danger']
     this.labels = res1.data.data
 
     const ids = this.labels.map((label) => label.id)
     // 标签对于文章数
-    const res1s = await axios.get(`http://ip(localhost):端口/label/BatchCount?ids=${ids}`)
+    const res1s = await axios.get(`http://localhost:9090/label/BatchCount?ids=${ids}`)
     for (var i = 0; i < this.labels.length; i++) {
       this.labels[i].type = type[Math.round(Math.random() * (6 - 0) + 0)]
       this.labels[i].count = res1s.data.data[i]
     }
     // 分类
-    const res2 = await axios.get('http://ip(localhost):端口/type/getAll')
+    const res2 = await axios.get('http://localhost:9090/type/getAll')
 
     this.classifys = res2.data.data
     for (var j = 0; j < this.classifys.length; j++) {

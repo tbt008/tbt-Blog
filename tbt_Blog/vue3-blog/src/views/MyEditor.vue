@@ -47,7 +47,7 @@
       <el-form-item label="文章封面">
         <el-upload
           class="avatar-uploader"
-          action="http://ip(localhost):端口/file/addFile"
+          action="http://localhost:9090/file/addFile"
           :show-file-list="false"
           :before-upload="beforeAvatarUpload"
           :on-change="onSelectFile"
@@ -148,7 +148,7 @@ editorConfig.MENU_CONF['uploadImage'] = {
     const data = new FormData()
     data.append('file', file)
 
-    axios.post('http://ip(localhost):端口/file/addFile', data).then((res) => {
+    axios.post('http://localhost:9090/file/addFile', data).then((res) => {
       const url = res.data
       const alt = '图片无法显示'
       const href = url
@@ -197,7 +197,7 @@ editorConfig.MENU_CONF['uploadVideo'] = {
     const data = new FormData()
     data.append('file', file)
 
-    axios.post('http://ip(localhost):端口/file/addFile', data).then((res) => {
+    axios.post('http://localhost:9090/file/addFile', data).then((res) => {
       const url = res.data
       insertFn(url, poster)
     })
@@ -223,12 +223,12 @@ var options = ref('')
 
 onMounted(() => {
   // 查询所有分类
-  axios.get(`http://ip(localhost):端口/type/getAll`).then((res) => {
+  axios.get(`http://localhost:9090/type/getAll`).then((res) => {
     options.value = res.data.data
     // 回显
     if (router.currentRoute.value.query.id) {
       const id = router.currentRoute.value.query.id
-      axios.get(`http://ip(localhost):端口/user/article/${id}`).then((res) => {
+      axios.get(`http://localhost:9090/user/article/${id}`).then((res) => {
         title.value = res.data.data.title
         description.value = res.data.data.description
         valueHtml.value = res.data.data.content
@@ -251,7 +251,7 @@ const mavonEditorRef = ref()
 const imgAdd = (pos: any, $file: any) => {
   const formData = new FormData()
   formData.append('file', $file)
-  axios.post('http://ip(localhost):端口/file/addFile', formData).then((res) => {
+  axios.post('http://localhost:9090/file/addFile', formData).then((res) => {
     const url = res.data
     // pos = 1
     mavonEditorRef.value.$img2Url(pos, url)
@@ -296,7 +296,7 @@ function primary() {
     data.append('coverImg', fileUrl.value)
     data.append('type', type.value)
     data.append('label', dynamicTags.value)
-    axios.post('http://ip(localhost):端口/admin/article/update', data)
+    axios.post('http://localhost:9090/admin/article/update', data)
     router.push({ path: '/manage' })
   } else {
     const data = new FormData()
@@ -306,7 +306,7 @@ function primary() {
     data.append('coverImg', fileUrl.value)
     data.append('label', dynamicTags.value)
     data.append('type', type.value)
-    axios.post('http://ip(localhost):端口/admin/article/upload', data)
+    axios.post('http://localhost:9090/admin/article/upload', data)
     router.push({ path: '/manage' })
   }
 }

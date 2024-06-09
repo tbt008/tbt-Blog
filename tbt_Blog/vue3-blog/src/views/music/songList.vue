@@ -30,8 +30,8 @@ export default {
     }
   },
   mounted() {
-    // .get('http://ip(localhost):端口/music/get')
-    const res = axios.get('http://ip(localhost):端口/music/get').then((res) => {
+    // .get('http://localhost:9090/music/get')
+    const res = axios.get('http://localhost:9090/music/get').then((res) => {
       // console.log(res.data.data)
       this.musicList = res.data.data
     })

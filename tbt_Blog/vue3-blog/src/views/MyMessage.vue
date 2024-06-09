@@ -162,7 +162,7 @@ export default {
     },
     getData() {
       axios
-        .get(`http://ip(localhost):端口/message/page?pageNo=${this.index}&pageSize=5`)
+        .get(`http://localhost:9090/message/page?pageNo=${this.index}&pageSize=5`)
         .then((res) => {
           if (res.data.data.length == 0) {
             this.isBottom = true
@@ -205,7 +205,7 @@ export default {
         qqName = res.data.data.name
         qqImg = ` http://q2.qlogo.cn/headimg_dl?dst_uin=${username}&spec=100`
         axios
-          .post('http://ip(localhost):端口/message/add', {
+          .post('http://localhost:9090/message/add', {
             name: qqName,
             qq: username,
             img: qqImg,

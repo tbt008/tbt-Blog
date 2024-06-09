@@ -418,7 +418,7 @@ getComment()
 function getComment() {
   twoList = ref([])
   // 获取到一级评论
-  axios.get(`http://ip(localhost):端口/user/comment/getOne/${source}/${id}`).then((res) => {
+  axios.get(`http://localhost:9090/user/comment/getOne/${source}/${id}`).then((res) => {
     commentList.value = res.data.data
     //替换
 
@@ -456,7 +456,7 @@ width: 2.5rem;" class="message-img" />`
         while (whileIdList[0] != null) {
           var whileId = whileIdList[0]
           await axios
-            .get(`http://ip(localhost):端口/user/comment/getTwo/${whileId}`)
+            .get(`http://localhost:9090/user/comment/getTwo/${whileId}`)
             .then((res) => {
               for (var j = 0; j < res.data.data.length; j++) {
                 twoCommentList.push(res.data.data[j])
@@ -494,7 +494,7 @@ width: 2.5rem;" class="message-img" />`
     })
   })
 }
-axios.get(`http://ip(localhost):端口/user/article/${id}`).then((data) => {
+axios.get(`http://localhost:9090/user/article/${id}`).then((data) => {
   article.value = data.data.data
   article.value.content = marked(article.value.content || '')
   nextTick(() => {
@@ -534,7 +534,7 @@ function addComment() {
     qqName = res.data.data.name
     qqImg = ` http://q2.qlogo.cn/headimg_dl?dst_uin=${myQQ.value}&spec=100`
     axios
-      .post('http://ip(localhost):端口/user/comment/addOne', {
+      .post('http://localhost:9090/user/comment/addOne', {
         source: 1,
         sourceId: id,
         img: qqImg,
@@ -570,7 +570,7 @@ function addTwoComment(indexId) {
     qqName = res.data.data.name
     qqImg = ` http://q2.qlogo.cn/headimg_dl?dst_uin=${myQQ.value}&spec=100`
     axios
-      .post('http://ip(localhost):端口/user/comment/addTwo', {
+      .post('http://localhost:9090/user/comment/addTwo', {
         source: 1,
         targetId: indexId,
         img: qqImg,

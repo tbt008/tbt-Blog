@@ -110,7 +110,7 @@
           <div id="card3" class="manage-card">
             <el-upload
               v-model:file-list="fileList"
-              action="http://ip(localhost):端口/file/addFile"
+              action="http://localhost:9090/file/addFile"
               list-type="picture-card"
               :on-preview="handlePictureCardPreview"
               :on-remove="handleRemove"
@@ -172,20 +172,20 @@ var essay = ref('')
 const input = ref('')
 const create = () => {
   axios
-    .get('http://ip(localhost):端口/user/article/page?pageNo=1&pageSize=100&isAsc=false')
+    .get('http://localhost:9090/user/article/page?pageNo=1&pageSize=100&isAsc=false')
 
     .then((res) => {
       articleList.value = res.data.data
     })
 
   axios
-    .get('http://ip(localhost):端口/type/page?pageNo=1&pageSize=10&isAsc=false')
+    .get('http://localhost:9090/type/page?pageNo=1&pageSize=10&isAsc=false')
 
     .then((res) => {
       typeList.value = res.data.data
     })
   axios
-    .get('http://ip(localhost):端口/message/getAll')
+    .get('http://localhost:9090/message/getAll')
 
     .then((res) => {
       messageList.value = res.data.data
@@ -201,7 +201,7 @@ create()
 function changePage() {
   const pageNo = currentPage.value
   axios
-    .get(`http://ip(localhost):端口/user/article/page?pageNo=${pageNo}&pageSize=10&isAsc=false`)
+    .get(`http://localhost:9090/user/article/page?pageNo=${pageNo}&pageSize=10&isAsc=false`)
     .then((res) => {
       articleList.value = res.data.data
     })
@@ -210,7 +210,7 @@ function addBlog() {
   router.push({ path: '/editor' })
 }
 function addType() {
-  axios.post(`http://ip(localhost):端口/type/add?name=${input.value}`).then((res) => {
+  axios.post(`http://localhost:9090/type/add?name=${input.value}`).then((res) => {
     create()
   })
 }
@@ -223,14 +223,14 @@ function onEditArticle(row) {
 function onDeleteArticle(row) {
   const id = row.id
 
-  axios.post(`http://ip(localhost):端口/admin/article/delete/${id}`).then((res) => {
+  axios.post(`http://localhost:9090/admin/article/delete/${id}`).then((res) => {
     create()
   })
 }
 function onDeleteType(row) {
   const id = row.id
 
-  axios.post(`http://ip(localhost):端口/type/delete/${id}`).then((res) => {
+  axios.post(`http://localhost:9090/type/delete/${id}`).then((res) => {
     create()
   })
 }
@@ -249,7 +249,7 @@ function onEditType(row) {
       data.append('id', id)
       data.append('name', value)
 
-      axios.post(`http://ip(localhost):端口/type/update`, data).then((res) => {
+      axios.post(`http://localhost:9090/type/update`, data).then((res) => {
         create()
       })
     })

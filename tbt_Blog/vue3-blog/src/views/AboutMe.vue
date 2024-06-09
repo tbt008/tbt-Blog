@@ -272,7 +272,7 @@ export default {
     window.addEventListener('mousewheel', this.debounce(this.next, this.prev, 300))
 
     // 查询友链
-    axios.get(`http://ip(localhost):端口/friend/getAll`).then((res) => {
+    axios.get(`http://localhost:9090/friend/getAll`).then((res) => {
       this.friends = res.data.data
     })
   },
