@@ -1,5 +1,6 @@
 # 别忘记点star啊，兄弟们
-![Uploading image.png…]()
+![image](https://github.com/tbt008/tbt-Blog/assets/136364030/6ca089d0-26f7-4541-93b1-2a7e1ad0e48c)
+
 
 ### 前端：vue2+vue3 ，wangeditor，highlight.js ， marked，mavonEditor，elementplus
 
