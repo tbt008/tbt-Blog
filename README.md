@@ -2,6 +2,10 @@
 后端：springboot+mybatisplus
 存储：oss
 
+前端就是那个vue3-blog文件，用idea单独打开，执行
+npm install
+npm run dev
+
 后端数据库修改：
 ![image](https://github.com/tbt008/tbt-Blog/assets/136364030/20a4d6fe-7982-41dd-bd08-4bf6309c85c3)
 
