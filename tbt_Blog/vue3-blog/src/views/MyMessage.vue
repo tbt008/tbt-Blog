@@ -167,7 +167,11 @@ export default {
           if (res.data.data.length == 0) {
             this.isBottom = true
           }
-          this.messageList = this.messageList.concat(res.data.data)
+          if (this.index == 1) {
+            this.messageList = res.data.data
+          } else {
+            this.messageList = this.messageList.concat(res.data.data)
+          }
           console.log(this.messageList)
           this.messageList = this.$refs.emoji.translate(this.messageList)
         })
