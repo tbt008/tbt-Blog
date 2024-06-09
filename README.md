@@ -1,4 +1,4 @@
-前端：vue2+vue3 
+前端：vue2+vue3 ，wangeditor，highlight.js ， marked，mavonEditor
 
 后端：springboot+mybatisplus
 
