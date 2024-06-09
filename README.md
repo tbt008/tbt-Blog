@@ -1,7 +1,9 @@
 前端：vue2+vue3 
 后端：springboot+mybatisplus
 存储：oss
-
+管理界面在/manage路径
+项目前端部分来源 山羊的前端小窝
+点歌台来源：https://www.bilibili.com/video/BV1KU4y1d7t5/?spm_id_from=333.337.search-card.all.click
 效果图：
 ![NZ0( V8}4ERI4P)5U D(KOF](https://github.com/tbt008/tbt-Blog/assets/136364030/edb968ca-afa1-42c2-adf0-161a6a456961)
 
