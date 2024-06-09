@@ -1,0 +1,215 @@
+@media only screen and (max-width: 374px) {
+  .content {
+    display: flex;
+    margin: auto;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  .content-top {
+    display: none;
+  }
+  .content-main {
+    display: flex;
+    margin: auto;
+    width: 100%;
+    box-sizing: border-box;
+    /* border-radius: 25px; */
+    overflow: hidden;
+  }
+  .right-content {
+    min-height: 500px;
+  }
+
+  .content-left {
+    display: none;
+  }
+  .user {
+    user-select: none;
+    text-align: center;
+    color: #5d5c5c;
+    display: flex;
+    font-size: 10px;
+    justify-content: space-around;
+    padding: 5px;
+  }
+
+  .img {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+  }
+  .img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+
+  h3 {
+    text-align: center;
+  }
+
+  .title {
+    text-align: center;
+    font-size: 2rem;
+    user-select: none;
+    color: #000000;
+    margin-top: 35px;
+  }
+  .content-right {
+    background-color: rgb(251, 251, 251);
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media only screen and (min-width: 414px) {
+  .content {
+    display: block;
+    margin: auto;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 25px;
+    overflow: hidden;
+  }
+  .content-top {
+    height: 200px;
+  }
+  .content-main {
+    display: flex;
+    margin: auto;
+    width: 80%;
+    box-sizing: border-box;
+    border-radius: 25px;
+    overflow: hidden;
+  }
+  .right-content {
+    min-height: 500px;
+  }
+  .catalogue_index {
+    text-decoration: none;
+    color: #0a0a0a;
+    font-size: 17px;
+
+    display: block;
+    width: 10em; /*保证文字不会被半汉字截断,显示10个文字  */
+    overflow: hidden; /*超出长度的文字隐藏*/
+    text-overflow: ellipsis; /*文字隐藏以后添加省略号*/
+    white-space: nowrap; /*强制不换行*/
+  }
+  .catalogue_index:hover {
+    color: #e92323;
+  }
+  .div-border {
+    border-radius: 25px;
+    width: 220px;
+    height: 280px;
+    padding: 5px;
+    background: linear-gradient(to left top, rgb(1, 50, 248), rgb(246, 18, 136));
+  }
+  .catalogue-border {
+    border-radius: 25px;
+    width: 220px;
+    height: auto;
+    /* max-height: 600px; */
+    padding: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: linear-gradient(to left top, rgb(48, 98, 248), rgb(246, 18, 136));
+  }
+  .card {
+    /* background: linear-gradient(to left top, rgb(1, 50, 248), rgb(246, 18, 136)); */
+    background-color: rgb(255, 255, 255);
+    border-radius: 25px;
+    margin: auto;
+    display: block;
+    width: 100%;
+
+    height: 100%;
+  }
+  .catalogue {
+    width: 100%;
+    height: auto;
+    /* max-height: 600px; */
+    overflow: hidden;
+    background-color: rgba(255, 255, 255);
+    /* margin-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 20px; */
+    z-index: 99;
+    border-radius: 25px;
+  }
+
+  .catalogue_fixed {
+    position: fixed;
+    top: 0px;
+    width: 220px;
+  }
+  .user {
+    user-select: none;
+    text-align: center;
+    color: #c4c3c3;
+    display: flex;
+    font-size: 25px;
+    justify-content: space-around;
+    padding: 5px;
+  }
+
+  .img {
+    user-select: none;
+    width: 100px;
+    height: 100px;
+    padding-top: 20px;
+    margin: auto;
+  }
+  .img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+  .card h3:hover {
+    color: rgb(22, 123, 231);
+  }
+  h3 {
+    text-align: center;
+  }
+  .card a {
+    display: block;
+    text-align: center;
+  }
+
+  .counter {
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+  }
+  .content-left {
+    display: block;
+    /* width: 20%; */
+    /* width: 250px; */
+    width: 220px;
+    height: 100%;
+
+    border-radius: 25px;
+    margin: 10px;
+  }
+  .title {
+    text-align: center;
+    font-size: 60px;
+    user-select: none;
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 35px;
+    margin-bottom: 40px;
+  }
+  .content-right {
+    background-color: rgb(251, 251, 251);
+    display: block;
+    width: 90%;
+    height: 100%;
+    margin: 10px;
+    padding: 30px;
+    border-radius: 25px;
+  }
+}

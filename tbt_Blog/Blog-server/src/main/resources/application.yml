@@ -1,0 +1,43 @@
+server:
+  port: 9090
+
+spring:
+  servlet:
+    multipart:
+      # 设置单个文件大小
+      max-file-size: 500MB
+      # 设置单次请求文件的总大小
+      max-request-size: 500MB
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://ip地址:3306/blog?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+    username: ...
+    password: ...
+#    username: root
+#    password: 123456
+    type: com.zaxxer.hikari.HikariDataSource
+  mvc:
+   static-path-pattern:  /**
+  logging:
+    level:
+      com.itheima: debug
+    pattern:
+      dateformat: HH:mm:ss
+#mybatis-plus:
+#  #mapper配置文件
+#  mapper-locations: classpath:mapper/*.xml
+#  type-aliases-package: com.blog.domain.entity
+#  configuration:
+#    #开启驼峰命名
+#    map-underscore-to-camel-case: true
+
+#mybatis-plus:
+#  # 包扫描路径(当前项目的实体类所在位置。别名包扫描路径，通过该属性可以给包中的类注册别名，多个路径用逗号分割)
+#  type-aliases-package: com.blog.domain.entity
+#  # xml扫描，多个目录用逗号或者分号分隔(告诉 Mapper 所对应的 XML 文件位置)
+#  mapper-locations: classpath:mapper/*.xml
+
+
+
+
+
