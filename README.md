@@ -1,11 +1,11 @@
-别忘记点star啊，兄弟们
+# 别忘记点star啊，兄弟们
 ![Uploading image.png…]()
 
-前端：vue2+vue3 ，wangeditor，highlight.js ， marked，mavonEditor，elementplus
+### 前端：vue2+vue3 ，wangeditor，highlight.js ， marked，mavonEditor，elementplus
 
-后端：springboot+mybatisplus
+### 后端：springboot+mybatisplus
 
-存储：oss
+### 存储：oss
 
 管理界面在/manage路径
 
