@@ -223,13 +223,14 @@ export default {
     }
   },
   async created() {
+    this.isloading = false
     const res = await axios.get(
       'http://localhost:9090/user/article/page?pageNo=1&pageSize=5&isAsc=false'
     )
 
     this.articles = res.data.data
     this.newArticle = res.data.data.slice(0, 3)
-    this.isloading = false
+    
     // 标签
     const res1 = await axios.get('http://localhost:9090/label/getAll')
     var type = ['primary', 'success', 'info', 'warning', 'danger']
