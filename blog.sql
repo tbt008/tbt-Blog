@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `label_article` (
 CREATE TABLE IF NOT EXISTS `message` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(20) NOT NULL,
-  `message` varchar(50) NOT NULL,
+  `message` text NOT NULL,
   `create_time` datetime NOT NULL,
   `qq` varchar(15) NOT NULL,
   `img` varchar(100) NOT NULL,
